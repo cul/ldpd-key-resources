@@ -7,6 +7,8 @@ gem 'rails', '~> 6.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 
+gem 'nokogiri', '~> 1.10.10'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.2'
 
@@ -35,7 +37,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 
 # Columbia CAS authentication
-gem 'cul_omniauth', git: 'https://github.com/cul/cul_omniauth', branch: 'rails-6'
+gem 'cul_omniauth', git: 'https://github.com/cul/cul_omniauth', branch: 'rails_6'
 # gem 'cul_omniauth', path: '/Users/marquis/src/cul_omniauth'
 
 # Use MySQL for deployed server environments
