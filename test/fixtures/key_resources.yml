@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: Key Resource A
   url: MyString
   description: MyString
   keywords: MyText
-  tags: MyText
-  created_by: MyString
-  updated_by: MyString
+  contexts: KeyResources
+  created_by: admin-user
+  updated_by: admin-user
 
 two:
-  title: MyString
+  title: Key Resource B
   url: MyString
   description: MyString
   keywords: MyText
-  tags: MyText
-  created_by: MyString
-  updated_by: MyString
+  contexts: KeyResources
+  created_by: admin-user
+  updated_by: admin-user

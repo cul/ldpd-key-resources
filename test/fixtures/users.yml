@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+authorized:
+  first_name: Authorized
+  last_name: User
+  uid: 'admin-user'
+  affils: []
+
+unauthorized:
+  first_name: Public
+  last_name: User
+  uid: 'public-user'
+  affils: []
