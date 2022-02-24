@@ -3,6 +3,8 @@ require "application_system_test_case"
 class KeyResourcesTest < ApplicationSystemTestCase
   setup do
     @key_resource = key_resources(:one)
+    @next_title = @key_resource.title.sub(/\sA$/, ' C')
+    login_as_user(users(:authorized))
   end
 
   test "visiting the index" do
@@ -14,36 +16,34 @@ class KeyResourcesTest < ApplicationSystemTestCase
     visit key_resources_url
     click_on "New Key Resource"
 
-    fill_in "Created by", with: @key_resource.created_by
     fill_in "Description", with: @key_resource.description
     fill_in "Keywords", with: @key_resource.keywords
     fill_in "Contexts", with: @key_resource.contexts
     fill_in "Categories", with: @key_resource.categories
-    fill_in "Title", with: @key_resource.title
-    fill_in "Updated by", with: @key_resource.updated_by
+    fill_in "Title", with: @next_title
     fill_in "Url", with: @key_resource.url
-    click_on "Create Key Resource"
+    click_on "Save"
 
     assert_text "Key Resource was successfully created"
-    click_on "Back"
+    assert_css("dd.key-resource-updated-by", text: users(:authorized).uid)
+    click_on "View All Key Resources"
   end
 
   test "updating a Key Resource" do
     visit key_resources_url
     click_on "Edit", match: :first
 
-    fill_in "Created by", with: @key_resource.created_by
     fill_in "Description", with: @key_resource.description
     fill_in "Keywords", with: @key_resource.keywords
     fill_in "Contexts", with: @key_resource.contexts
     fill_in "Categories", with: @key_resource.categories
     fill_in "Title", with: @key_resource.title
-    fill_in "Updated by", with: @key_resource.updated_by
     fill_in "Url", with: @key_resource.url
-    click_on "Update Key Resource"
+    click_on "Save"
 
     assert_text "Key Resource was successfully updated"
-    click_on "Back"
+    assert_css("dd.key-resource-updated-by", text: users(:authorized).uid)
+    click_on "View All Key Resources"
   end
 
   test "destroying a Key Resource" do
