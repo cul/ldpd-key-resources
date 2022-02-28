@@ -37,8 +37,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 
 # Columbia CAS authentication
-gem 'cul_omniauth', git: 'https://github.com/cul/cul_omniauth', branch: 'rails_6'
-# gem 'cul_omniauth', path: '/Users/marquis/src/cul_omniauth'
+gem 'cul_omniauth', '~> 0.7.0'
 
 # Use MySQL for deployed server environments
 gem 'mysql2'
