@@ -5,27 +5,27 @@
 <div class="clearfix"></div>
 
 <dl class="row">
-  <dt class="col-sm-3">Title</dt>
-  <dd class="col-sm-9"><%= @key_resource.title %></dd>
+  <dt class="key-resource-title col-sm-3">Title</dt>
+  <dd class="key-resource-title col-sm-9"><%= @key_resource.title %></dd>
 
-  <dt class="col-sm-3">URL</dt>
-  <dd class="col-sm-9"><%= @key_resource.url %></dd>
+  <dt class="key-resource-url col-sm-3">URL</dt>
+  <dd class="key-resource-url col-sm-9"><%= @key_resource.url %></dd>
 
-  <dt class="col-sm-3">Description</dt>
-  <dd class="col-sm-9"><%= @key_resource.description %></dd>
+  <dt class="key-resource-description col-sm-3">Description</dt>
+  <dd class="key-resource-description col-sm-9"><%= @key_resource.description %></dd>
 
-  <dt class="col-sm-3">Contexts</dt>
-  <dd class="col-sm-9"><%= @key_resource.contexts %></dd>
+  <dt class="key-resource-contexts col-sm-3">Contexts</dt>
+  <dd class="key-resource-contexts col-sm-9"><%= @key_resource.contexts %></dd>
 
-  <dt class="col-sm-3">Keywords</dt>
-  <dd class="col-sm-9"><%= @key_resource.keywords %></dd>
+  <dt class="key-resource-keywords col-sm-3">Keywords</dt>
+  <dd class="key-resource-keywords col-sm-9"><%= @key_resource.keywords %></dd>
 
-  <dt class="col-sm-3">Categories</dt>
-  <dd class="col-sm-9"><%= @key_resource.categories %></dd>
+  <dt class="key-resource-categories col-sm-3">Categories</dt>
+  <dd class="key-resource-categories col-sm-9"><%= @key_resource.categories %></dd>
 
-  <dt class="col-sm-3">Updated By</dt>
-  <dd class="col-sm-9"><%= @key_resource.updated_by || '&nbsp;'.html_safe %></dd>
+  <dt class="key-resource-updated-by col-sm-3">Updated By</dt>
+  <dd class="key-resource-updated-by col-sm-9"><%= @key_resource.updated_by || @key_resource.created_by || '&nbsp;'.html_safe %></dd>
 
-  <dt class="col-sm-3">ID</dt>
-  <dd class="col-sm-9"><%= @key_resource.id %></dd>
+  <dt class="key-resource-id col-sm-3">ID</dt>
+  <dd class="key-resource-id col-sm-9"><%= @key_resource.id %></dd>
 </dl>

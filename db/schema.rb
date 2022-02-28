@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_151535) do
+ActiveRecord::Schema.define(version: 2022_02_28_143242) do
 
   create_table "key_resources", force: :cascade do |t|
     t.string "title"

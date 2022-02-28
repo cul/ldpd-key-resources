@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.0.4'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
+
+gem 'nokogiri', '~> 1.10.10'
 
 # Use Puma as the app server
 gem 'puma', '~> 5.2'
@@ -35,7 +37,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 
 # Columbia CAS authentication
-gem 'cul_omniauth', git: 'https://github.com/cul/cul_omniauth', branch: 'rails-6'
+gem 'cul_omniauth', git: 'https://github.com/cul/cul_omniauth', branch: 'rails_6'
 # gem 'cul_omniauth', path: '/Users/marquis/src/cul_omniauth'
 
 # Use MySQL for deployed server environments
