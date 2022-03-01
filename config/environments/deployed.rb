@@ -1,3 +1,4 @@
+# Environment config shared by all deployed environments
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -61,6 +62,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "key_resources_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.library.columbia.edu',
