@@ -13,6 +13,7 @@ class KeyResource < ApplicationRecord
   # will always be under the 767 byte limit.
   validates :url, presence: true, uniqueness: {scope: :url_hash}
   validates :contexts, presence: true
+  validates :description, length: { maximum: 255 }
 
   def hash_url
     return nil if self.url.nil?
