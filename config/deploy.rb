@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.18.0'
+lock '~> 3.14'
 
 # Until we retire all old CentOS VMs, we need to set the rvm_custom_path because rvm is installed
 # in a non-standard location for our AlmaLinux VMs.  This is because our service accounts need to
@@ -12,7 +12,7 @@ set :group, 'ldpd'
 set :remote_user, 'renserv'
 set :application, 'key_resources'
 set :repo_name, fetch(:application)
-set :repo_url, "git@github.com:cul/#{fetch(:repo_name)}.git"
+set :repo_url, 'git@github.com:cul/ldpd-key-resources.git' 
 set :deploy_name, "#{fetch(:application)}_#{fetch(:stage)}"
 # used to run rake db:migrate, etc
 set :rails_env, fetch(:deploy_name)
@@ -22,9 +22,9 @@ set :deploy_to, "/opt/passenger/#{fetch(:deploy_name)}"
 
 # Default value for :linked_files is []
 append  :linked_files,
-        'config/database.yml'
+        'config/database.yml',
         'config/master.key',
-        'config/permissions.yml',
+        'config/permissions.yml'
 
 # Default value for linked_dirs is []
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
