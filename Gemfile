@@ -68,7 +68,6 @@ group :development do
   gem 'capistrano-cul', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm', require: false
   # Just add it to your Gemfile and require it in your Capfile.
   gem 'capistrano-passenger', require: false
 
