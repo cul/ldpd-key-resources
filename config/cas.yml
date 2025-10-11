@@ -1,23 +1,50 @@
-#
-# SAML configuration for authentication via cul_omniauth.
-#
-
-cas: &CAS
+development:
   host: cas.columbia.edu
-  # host: casdev.cc.columbia.edu
   login_url: /cas/login
   logout_url: /cas/logout
   service_validate_url: /cas/serviceValidate
   disable_ssl_verification: true
   provider: cas
-saml: &SAML
-  <<: *CAS
   provider: saml
   service_validate_url: /cas/samlValidate
 
-development: *SAML
-test: *SAML
+test:
+  host: cas.columbia.edu
+  login_url: /cas/login
+  logout_url: /cas/logout
+  service_validate_url: /cas/serviceValidate
+  disable_ssl_verification: true
+  provider: cas
+  provider: saml
+  service_validate_url: /cas/samlValidate
 
-key_resources_dev: *SAML
-key_resources_test: *SAML
-key_resources_prod: *SAML
+key_resources_dev:
+  host: cas.columbia.edu
+  login_url: /cas/login
+  logout_url: /cas/logout
+  service_validate_url: /cas/serviceValidate
+  disable_ssl_verification: true
+  provider: cas
+  provider: saml
+  service_validate_url: /cas/samlValidate
+
+key_resources_test:
+  host: cas.columbia.edu
+  login_url: /cas/login
+  logout_url: /cas/logout
+  service_validate_url: /cas/serviceValidate
+  disable_ssl_verification: true
+  provider: cas
+  provider: saml
+  service_validate_url: /cas/samlValidate
+
+key_resources_prod:
+  host: cas.columbia.edu
+  login_url: /cas/login
+  logout_url: /cas/logout
+  service_validate_url: /cas/serviceValidate
+  disable_ssl_verification: true
+  provider: cas
+  provider: saml
+  service_validate_url: /cas/samlValidate
+
