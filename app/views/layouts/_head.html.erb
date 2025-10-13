@@ -5,9 +5,5 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%
-    # stylesheet_pack_tag is available as long as javascript_pack_tag includes
-    # at least one css file and `extract_css: true` is present in webpacker.yml
-  %>
-  <%= stylesheet_pack_tag 'application' %>
+  <%= vite_stylesheet_tag 'application.scss' %>
 </head>

@@ -1,19 +1,33 @@
 {
   "name": "key_resources",
   "private": true,
+  "scripts": {
+    "start:dev": "./bin/vite dev",
+    "lint": "eslint app/javascript --ext js,jsx"
+  },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.10.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "^4.0.7",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
-    "@fortawesome/fontawesome-free": "^5.10.1"
+    "rebuild": "^0.1.2"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.4.1",
-    "webpack": "^4.0.0"
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "globals": "^15.0.0",
+    "sass-embedded": "^1.93.2",
+    "vite": "^5.0.0",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-ruby": "^5.1.0"
   }
 }
