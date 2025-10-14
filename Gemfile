@@ -52,6 +52,9 @@ gem 'rack-cors', require: 'rack/cors'
 # For cleaning up leading and trailing whitespace on model attributes
 gem 'strip_attributes', '~> 1.9'
 
+# Forcing psych 3 (not 4) so that yaml aliases can be used with Rails 6.0
+gem 'psych', '<4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

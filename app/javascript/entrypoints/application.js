@@ -3,15 +3,16 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from '@rails/ujs';
+import UJS from '@rails/ujs';
 import * as ActiveStorage from '@rails/activestorage';
 
-Rails.start();
+// require('../channels');
+
+import '../src/key_resources'; // editor functions that must share CSRF from rails/ujs
+import '../css/key_resources.scss';
+
+UJS.start();
 ActiveStorage.start();
-
-require('../channels');
-
-require('../src/key_resources');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
