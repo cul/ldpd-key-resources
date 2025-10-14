@@ -5,9 +5,6 @@
   <%= render 'layouts/header' %>
   <div class="container-fluid">
     <%= render 'layouts/messages' %>
-    <% unless current_user %>
-      <div class="alert alert-info text-center">This is a read-only view. Log in to edit these entries.</div>
-    <% end %>
     <%= yield %>
   </div>
   <%= vite_javascript_tag 'application' %>

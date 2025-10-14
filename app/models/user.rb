@@ -2,18 +2,9 @@
 # require 'resolv'
 
 class User < ApplicationRecord
-  include Cul::Omniauth::Users
-
-  # cul_omniauth includes several options (:registerable,
-  # :recoverable, :rememberable, :trackable, :validatable, ...)
-  # but we also want...
-  devise :timeoutable
+  devise :database_authenticatable, :validatable, :omniauthable, omniauth_providers: [:cas]
 
   serialize :affils, Array
-
-  # cul_omniauth sets "devise :recoverable", and that requires
-  # that the following user attributes be available.
-  attr_accessor :reset_password_token, :reset_password_sent_at
 
   # # devise requires that a password getter and setter be defined
   # # instead of defining bogus methods below, just use this.
@@ -24,42 +15,6 @@ class User < ApplicationRecord
   before_validation(:default_email, on: :create)
   # before_validation(:generate_password, on: :create)
   before_create :set_personal_info_via_ldap
-
-  # def self.on_campus?(ip_addr)
-  #   # check passed string against regexp from standard library
-  #   return false unless ip_addr =~ Resolv::IPv4::Regex
-  #
-  #   APP_CONFIG['COLUMBIA_IP_RANGES'].any? do |ir|
-  #     IPAddr.new(ir) === ip_addr
-  #   end
-  # end
-
-  # def has_role?(area, role, admin_okay = true)
-  #   uid && uid.in?(PERMISSIONS_CONFIG[area][role]) ||
-  #     (admin_okay && self.admin?)
-  # end
-
-  def has_affil(affil = nil)
-    return false if affil.blank?
-    return false unless affils
-    affils.include?(affil)
-  end
-
-  # def culstaff?
-  #   self.has_affil('CUL_allstaff')
-  # end
-
-  # # developers and sysadmins
-  # def admin?
-  #   uid.in?(PERMISSIONS_CONFIG['site']['manage'])
-  # end
-
-  # # application-level admin permissions
-  # def valet_admin?
-  #   return true if admin?
-  #   valet_admins = Array(APP_CONFIG['valet_admins']) || []
-  #   return valet_admins.include? uid
-  # end
 
   def to_s
     email
