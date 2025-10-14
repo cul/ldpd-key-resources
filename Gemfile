@@ -35,7 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Authentication
-gem 'devise'
+gem 'devise', '~> 4.9'
+gem 'omniauth', '~> 2.1'
+gem 'omniauth-cul', '~> 0.2'
 
 # Columbia CAS authentication
 gem 'cul_omniauth', '~> 0.7.0'
@@ -54,6 +56,8 @@ gem 'strip_attributes', '~> 1.9'
 
 # Forcing psych 3 (not 4) so that yaml aliases can be used with Rails 6.0
 gem 'psych', '<4'
+
+gem 'rainbow', '~>3.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

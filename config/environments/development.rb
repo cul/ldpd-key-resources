@@ -11,9 +11,9 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
-  
+
   # Whitelist alternate names for localhost development
-  config.hosts << 'cliobeta.columbia.edu'
+  config.hosts << 'key-resources-dev.library.columbia.edu'
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.

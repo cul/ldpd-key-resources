@@ -12,15 +12,10 @@
               <i class="fas fa-user"></i> <%= current_user.name %> (<%= current_user.uid %>)
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="logout-dropdown">
-              <%= link_to '<i class="fas fa-sign-out-alt"></i> Log Out'.html_safe, destroy_user_session_path, {class: 'dropdown-item'} %>
+              <%= button_to 'Log Out'.html_safe, destroy_user_session_path, {class: 'dropdown-item', method: 'delete'} %>
             </div>
           </li>
         <% else %>
-          <% if Rails.env.development? %>
-            <li class="nav-item">
-              <%= link_to '<i class="fas fa-sign-in-alt"></i> Non-CAS Developer Log In'.html_safe, developer_new_user_session_path, {class: 'nav-link text-primary'} %>
-            </li>
-          <% end %>
           <li class="nav-item">
             <%= link_to '<i class="fas fa-sign-in-alt"></i> Log In'.html_safe, new_user_session_path, {class: 'nav-link'} %>
           </li>

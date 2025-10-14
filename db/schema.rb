@@ -52,8 +52,6 @@ ActiveRecord::Schema.define(version: 2022_02_28_143242) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "provider", default: "saml", null: false
-    t.text "affils"
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
     t.index ["uid"], name: "index_users_on_uid"

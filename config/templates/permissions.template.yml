@@ -1,8 +1,12 @@
-development:
+# Permissions
+
+all: &all
   allowed_user_ids:
-    - admin-user
-  allowed_user_affils: []
-test:
-  allowed_user_ids:
-    - admin-user
-  allowed_user_affils: []
+    - abc123
+    - def456
+  # Uncomment section below if you want to use affils
+  # allowed_user_affils:
+  #   - CUL_dpts-ldpd
+
+development: *all
+test: *all

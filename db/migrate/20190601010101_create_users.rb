@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :uid, limit: 10
 
       # Devise Support
-      
+
       ## Database authenticatable
       t.string :email,              null: false, default: ''
       t.string :encrypted_password, null: false, default: ''
@@ -24,11 +24,11 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
-      
+
       # Omniauth SAML
-      
-      t.string   :provider, null: false, default: 'saml'
-      t.text     :affils
+
+      # t.string   :provider, null: false, default: 'saml'
+      # t.text     :affils
 
       t.timestamps null: true
     end
