@@ -37,7 +37,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Authentication
 gem 'devise', '~> 4.9'
 gem 'omniauth', '~> 2.1'
-gem 'omniauth-cul', '~> 0.2'
+gem 'omniauth-cul', '~> 0.3'
 
 # Columbia CAS authentication
 gem 'cul_omniauth', '~> 0.7.0'

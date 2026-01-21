@@ -1,11 +1,14 @@
 <h2>Log in</h2>
 
-<%= render "devise/shared/links" %>
-
-<% if Rails.env.development? %>
-  <p>
-    <strong>Development environment only:</strong>
-    <br /><br />
-    <%= link_to 'Sign in with development account', users_development_sign_in_developer_path %>
-  </p>
+<% if Devise.mappings[:user].omniauthable? %>
+  <% User.omniauth_providers.each do |provider| %>
+    <div>
+      <p><%=
+        button_to(
+          "Sign in with #{Devise.omniauth_configs.fetch(provider, nil)&.options&.fetch(:label, nil) || provider.name.to_s.titleize}",
+          omniauth_authorize_path(:user, provider),
+          :class => 'btn btn-primary btn-sm')
+      %></p>
+    </div>
+  <% end %>
 <% end %>

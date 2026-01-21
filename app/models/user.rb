@@ -2,7 +2,7 @@
 # require 'resolv'
 
 class User < ApplicationRecord
-  devise :database_authenticatable, :validatable, :omniauthable, omniauth_providers: [:cas]
+  devise :database_authenticatable, :validatable, :omniauthable, omniauth_providers: Devise.omniauth_configs.keys
 
   serialize :affils, Array
 
